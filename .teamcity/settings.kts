@@ -46,7 +46,7 @@ object Build : BuildType({
         }
         maven {
             name = "build"
-            goals = "clean build"
+            goals = "build"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
         }
         maven {
