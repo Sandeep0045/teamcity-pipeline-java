@@ -45,11 +45,6 @@ object Build : BuildType({
             runnerArgs = "-Dmaven.test.failure.ignore=true"
         }
         maven {
-            name = "build"
-            goals = "build"
-            runnerArgs = "-Dmaven.test.failure.ignore=true"
-        }
-        maven {
             name = "test"
             goals = "test"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
