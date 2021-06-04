@@ -44,6 +44,11 @@ object Build : BuildType({
             goals = "clean compile"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
         }
+        maven {
+            name = "build"
+            goals = "clean build"
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
+        }
     }
 
     triggers {
