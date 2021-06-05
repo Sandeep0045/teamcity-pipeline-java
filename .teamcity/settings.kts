@@ -56,7 +56,7 @@ object Build : BuildType({
             runnerArgs = "-Dmaven.test.failure.ignore=true"
         }
         dockerCommand {
-            name = "build app"
+            name = "build image"
             commandType = build {
                 source = file {
                     path = "Dockerfile"
