@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.dockerCommand
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 
@@ -53,6 +54,16 @@ object Build : BuildType({
             name = "package"
             goals = "package"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
+        }
+        dockerCommand {
+            name = "build app"
+            commandType = build {
+                source = file {
+                    path = "Dockerfile"
+                }
+                namesAndTags = "sanjuniko/myfirst-app:%build.number%"
+                commandArgs = "--pull"
+            }
         }
     }
 
