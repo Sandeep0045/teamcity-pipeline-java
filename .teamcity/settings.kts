@@ -1,5 +1,6 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildFeatures.dockerSupport
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildFeatures.sshAgent
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.dockerCommand
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
@@ -95,6 +96,9 @@ object Build : BuildType({
             loginToRegistry = on {
                 dockerRegistryId = "PROJECT_EXT_7"
             }
+        }
+        sshAgent {
+            teamcitySshKey = "sachinsaini.pem"
         }
     }
 })
