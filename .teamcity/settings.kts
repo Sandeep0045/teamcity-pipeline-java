@@ -78,7 +78,7 @@ object Build : BuildType({
             type = "ssh-exec-runner"
             param("jetbrains.buildServer.deployer.username", "ubuntu")
             param("jetbrains.buildServer.sshexec.command", "docker container rm -f my-app || true")
-            param("jetbrains.buildServer.deployer.targetUrl", "3.229.120.111")
+            param("jetbrains.buildServer.deployer.targetUrl", "18.205.176.81")
             param("jetbrains.buildServer.sshexec.authMethod", "SSH_AGENT")
         }
     }
