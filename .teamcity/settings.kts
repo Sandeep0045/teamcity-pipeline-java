@@ -74,7 +74,7 @@ object Build : BuildType({
             }
         }
         step {
-            name = "Deploy"
+            name = "removing previous container"
             type = "ssh-exec-runner"
             param("jetbrains.buildServer.deployer.username", "ubuntu")
             param("jetbrains.buildServer.sshexec.command", "docker container rm -f my-app || true")
